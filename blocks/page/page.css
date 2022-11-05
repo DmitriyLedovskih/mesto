@@ -1,0 +1,7 @@
+.page {
+  font-family: 'Inter';
+  max-width: 880px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  background-color: #000;
+}
