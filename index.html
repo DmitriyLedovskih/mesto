@@ -16,8 +16,8 @@
       <div class="profile__container">
         <img src="./images/avatar.jpg" alt="Аватарка профиля" class="profile__avatar">
         <div class="profile__info">
-          <h1 class="profile__name">
-            Жак-Ив Кусто
+          <h1 class="profile__title">
+            <span class="profile__name">Жак-Ив Кусто</span>
             <button class="profile__button-edit" type="button">
               <img src="./images/button-edit.svg" alt="Иконка редактирования профиля" class="profile__button-icon">
             </button>
@@ -25,6 +25,23 @@
           <p class="profile__description">
             Исследователь океана
           </p>
+          <div class="popup">
+            <div class="popup__container">
+              <h2 class="popup__title">Редактировать профиль</h2>
+              <img src="./images/close-icon.svg" alt="Закрытие попапа" class="popup__close">
+              <form class="popup__form">
+                <fieldset class="popup__form-item">
+                  <input type="text" class="popup__form-input popup__form-input_type_name" value="Жак-Ив Кусто">
+                </fieldset>
+                <fieldset class="popup__form-item">
+                  <input type="text" class="popup__form-input popup__form-input_type_job" value="Исследователь океана">
+                </fieldset>
+                <fieldset class="popup__form-item">
+                  <button class="popup__form-button">Сохранить</button>
+                </fieldset>
+              </form>
+            </div>
+          </div>
         </div>
       </div>
       <button class="profile__button-add" type="button">
@@ -79,5 +96,6 @@
   <footer class="footer">
     <p class="footer__copyright">&copy; 2022 Mesto Russia</p>
   </footer>
+  <script src="./script.js"></script>
 </body>
 </html>

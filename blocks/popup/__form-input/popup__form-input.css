@@ -1,0 +1,17 @@
+.popup__form-input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  transition: .3s;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
+  padding: 0;
+}
+
+.popup__form-input:focus {
+  border-bottom-color: #000;
+}
