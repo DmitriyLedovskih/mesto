@@ -8,4 +8,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: opacity .3s;
+}
+
+.profile__button-edit:hover {
+  opacity: 0.6;
 }
