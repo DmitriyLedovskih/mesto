@@ -7,11 +7,19 @@
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
+  max-width: 350px;
 }
 
 @media screen and (max-width: 720px) {
   .profile__job {
     font-size: 14px;
     line-height: 17px;
+    max-width: 260px;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .profile__job {
+    max-width: 260px;
   }
 }
