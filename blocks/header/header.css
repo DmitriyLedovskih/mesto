@@ -2,3 +2,9 @@
   padding-bottom: 40px;
   border-bottom: 1px solid #545454;
 }
+
+@media screen and (max-width: 560px) {
+  .header {
+    padding: 0 27px 31px;
+  }
+}

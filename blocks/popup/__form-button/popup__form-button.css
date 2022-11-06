@@ -16,3 +16,10 @@
 .popup__form-button:hover {
   opacity: 0.6;
 }
+
+@media screen and (max-width: 560px) {
+  .popup__form-button {
+    font-size: 14px;
+    line-height: 17px;
+  }
+}

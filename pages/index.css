@@ -1,4 +1,6 @@
+/* Normalize */
 @import url('../vendor/normalize.css');
+/* Fonts */
 @import url('../vendor/fonts/fonts.css');
 /* Page */
 @import url('../blocks/page/page.css');
@@ -14,17 +16,21 @@
 @import url('../blocks/profile/__container/profile__container.css');
 @import url('../blocks/profile/__avatar/profile__avatar.css');
 @import url('../blocks/profile/__info/profile__info.css');
-@import url('../blocks/profile/__title/profile__title.css');
-@import url('../blocks/profile/__description/profile__description.css');
-@import url('../blocks/profile/__button-edit/profile__button-edit.css');
-@import url('../blocks/profile/__button-add/profile__button-add.css');
+@import url('../blocks/profile/__row/profile__row.css');
+@import url('../blocks/profile/__name/profile__name.css');
+@import url('../blocks/profile/__edit-button/profile__edit-button.css');
+@import url('../blocks/profile/__edit-icon/profile__edit-icon.css');
+@import url('../blocks/profile/__job/profile__job.css');
+@import url('../blocks/profile/__add-button/profile__add-button.css');
+@import url('../blocks/profile/__add-icon/profile__add-icon.css');
 /* Card */
 @import url('../blocks/cards/cards.css');
 @import url('../blocks/card/card.css');
 @import url('../blocks/card/__image/card__image.css');
 @import url('../blocks/card/__content/card__content.css');
 @import url('../blocks/card/__title/card__title.css');
-@import url('../blocks/card/__button-like/card__button-like.css');
+@import url('../blocks/card/__like-button/card__like-button.css');
+@import url('../blocks/card/__like-icon/card__like-icon.css');
 /* Footer */
 @import url('../blocks/footer/footer.css');
 @import url('../blocks/footer/__copyright/footer__copyright.css');

@@ -1,4 +1,4 @@
-.profile__button-add {
+.profile__add-button {
   background-color: transparent;
   cursor: pointer;
   border: 2px solid #fff;
@@ -10,6 +10,12 @@
   transition: opacity .3s;
 }
 
-.profile__button-add:hover {
+.profile__add-button:hover {
   opacity: 0.6;
+}
+
+@media screen and (max-width: 560px) {
+  .profile__add-button {
+    max-width: 100%;
+  }
 }

@@ -3,4 +3,19 @@
   right: -40px;
   top: -40px;
   cursor: pointer;
+  width: 32px;
+  height: 32px;
+  transition: opacity .3s;
+}
+
+.popup__close:hover {
+  opacity: 0.6;
+}
+
+@media screen and (max-width: 560px) {
+  .popup__close {
+    right: 0;
+    width: 20px;
+    height: 20px;
+  }
 }

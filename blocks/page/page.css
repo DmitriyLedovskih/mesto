@@ -6,3 +6,9 @@
   background-color: #000;
   padding: 45px 20px 60px;
 }
+
+@media screen and (max-width: 560px) {
+  .page {
+    padding: 28px 0 36px;
+  }
+}
