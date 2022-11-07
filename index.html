@@ -17,92 +17,55 @@
         <img src="./images/avatar.jpg" alt="Аватарка профиля" class="profile__avatar">
         <div class="profile__info">
           <div class="profile__row">
-            <h1 class="profile__name">
-              Жак-Ив Кусто
-            </h1>
-            <button class="profile__edit-button" type="button">
-              <img src="./images/button-edit.svg" alt="Иконка редактирования профиля" class="profile__edit-icon">
-            </button>
+            <h1 class="profile__name">Жак-Ив Кусто</h1>
+            <button class="profile__edit-button" type="button"></button>
           </div>
-          <p class="profile__job">
-            Исследователь океана
-          </p>
-          <div class="popup">
-            <div class="popup__container">
-              <h2 class="popup__title">Редактировать профиль</h2>
-              <img src="./images/close-icon.svg" alt="Закрытие попапа" class="popup__close">
-              <form class="popup__form">
-                <fieldset class="popup__form-item">
-                  <input type="text" class="popup__form-input popup__form-input_type_name" value="Жак-Ив Кусто">
-                </fieldset>
-                <fieldset class="popup__form-item">
-                  <input type="text" class="popup__form-input popup__form-input_type_job" value="Исследователь океана">
-                </fieldset>
-                <fieldset class="popup__form-item">
-                  <button class="popup__form-button">Сохранить</button>
-                </fieldset>
-              </form>
-            </div>
-          </div>
+          <p class="profile__job">Исследователь океана</p>
         </div>
       </div>
-      <button class="profile__add-button" type="button">
-        <img src="./images/button-add.svg" alt="Кнопка для добавленния фото" class="profile__add-icon">
-      </button>
+      <button class="profile__add-button" type="button"></button>
     </section>
     <section class="cards" aria-label="Интересные места">
       <article class="card">
         <img src="./images/karachaevsk.jpg" alt="Карачаевск" class="card__image">
         <div class="card__content">
           <h2 class="card__title">Карачаевск</h2>
-          <button class="card__like-button">
-            <img src="./images/like-icon.svg" alt="Кнопка лайка" class="card__like-icon">
-          </button>
+          <button class="card__like-button" type="button"></button>
         </div>
       </article>
       <article class="card">
         <img src="./images/elbrus.jpg" alt="Гора Эльбрус" class="card__image">
         <div class="card__content">
           <h2 class="card__title">Гора Эльбрус</h2>
-          <button class="card__like-button">
-            <img src="./images/like-icon.svg" alt="Кнопка лайка" class="card__like-icon">
-          </button>
+          <button class="card__like-button" type="button"></button>
         </div>
       </article>
       <article class="card">
         <img src="./images/dombai.jpg" alt="Домбай" class="card__image">
         <div class="card__content">
           <h2 class="card__title">Домбай</h2>
-          <button class="card__like-button">
-            <img src="./images/like-icon.svg" alt="Кнопка лайка" class="card__like-icon">
-          </button>
+          <button class="card__like-button" type="button"></button>
         </div>
       </article>
       <article class="card">
         <img src="./images/elbrus.jpg" alt="Гора Эльбрус" class="card__image">
         <div class="card__content">
           <h2 class="card__title">Гора Эльбрус</h2>
-          <button class="card__like-button">
-            <img src="./images/like-icon.svg" alt="Кнопка лайка" class="card__like-icon">
-          </button>
+          <button class="card__like-button" type="button"></button>
         </div>
       </article>
       <article class="card">
         <img src="./images/dombai.jpg" alt="Домбай" class="card__image">
         <div class="card__content">
           <h2 class="card__title">Домбай</h2>
-          <button class="card__like-button">
-            <img src="./images/like-icon.svg" alt="Кнопка лайка" class="card__like-icon">
-          </button>
+          <button class="card__like-button" type="button"></button>
         </div>
       </article>
       <article class="card">
         <img src="./images/karachaevsk.jpg" alt="Карачаевск" class="card__image">
         <div class="card__content">
           <h2 class="card__title">Карачаево-Черкесская Республика</h2>
-          <button class="card__like-button">
-            <img src="./images/like-icon.svg" alt="Кнопка лайка" class="card__like-icon">
-          </button>
+          <button class="card__like-button" type="button"></button>
         </div>
       </article>
     </section>
@@ -110,6 +73,23 @@
   <footer class="footer">
     <p class="footer__copyright">&copy; 2022 Mesto Russia</p>
   </footer>
+  <div class="popup">
+    <div class="popup__container">
+      <h2 class="popup__title">Редактировать профиль</h2>
+      <button class="popup__close-button"></button>
+      <form class="popup__form" name="popup-form">
+        <fieldset class="popup__form-item">
+          <input type="text" class="popup__form-input popup__form-input_type_name" name="name" placeholder="Ваше имя">
+        </fieldset>
+        <fieldset class="popup__form-item">
+          <input type="text" class="popup__form-input popup__form-input_type_job" name="job" placeholder="Ваша работа">
+        </fieldset>
+        <fieldset class="popup__form-item">
+          <button class="popup__form-button" type="submit">Сохранить</button>
+        </fieldset>
+      </form>
+    </div>
+  </div>
   <script src="./scripts/index.js"></script>
 </body>
 </html>
