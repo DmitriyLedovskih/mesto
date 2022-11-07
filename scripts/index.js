@@ -9,20 +9,19 @@ let jobInput = formElement.querySelector('.popup__form-input_type_job');
 
 function openPopup() {
   popup.classList.add('popup_opened');
+  nameInput.value = profileName.textContent;
+  jobInput.value = profileJob.textContent;
 }
 
 function closePopup() {
   popup.classList.remove('popup_opened');
 }
 
-nameInput.value = profileName.textContent;
-jobInput.value = profileJob.textContent;
-
 function formSubmitHandler(evt) {
   evt.preventDefault();
   profileName.textContent = nameInput.value;
   profileJob.textContent = jobInput.value;
-  popup.classList.remove('popup_opened');
+  closePopup();
 }
 
 popupCloseButton.addEventListener('click', closePopup);

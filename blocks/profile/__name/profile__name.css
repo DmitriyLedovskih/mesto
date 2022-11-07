@@ -1,9 +1,9 @@
 .profile__name {
   font-weight: 500;
   font-size: 42px;
-  line-height: 48px;
+  line-height: 44px;
   color: #fff;
-  margin: 0 0 16px;
+  margin: 0 0 10px;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
