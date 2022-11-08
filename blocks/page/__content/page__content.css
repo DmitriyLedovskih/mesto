@@ -1,10 +1,10 @@
 .page__content {
-  margin-top: 36px;
-  margin-bottom: 68px;
+  margin-top: 43px;
+  margin-bottom: 64px;
 }
 
 @media screen and (max-width: 560px) {
   .page__content {
-    margin-bottom: 44px;
+    margin: 40px 0;
   }
 }

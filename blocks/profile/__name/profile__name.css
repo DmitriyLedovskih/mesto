@@ -3,18 +3,17 @@
   font-size: 42px;
   line-height: 44px;
   color: #fff;
-  margin: 0 0 10px;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
   max-width: 350px;
+  margin: 0;
 }
 
 @media screen and (max-width: 720px) {
   .profile__name {
     font-size: 27px;
     line-height: 31px;
-    margin-bottom: 14px;
     max-width: 220px;
   }
 }
@@ -22,6 +21,5 @@
 @media screen and (max-width: 560px) {
   .profile__name {
     margin-left: 28px;
-    margin-bottom: 6px;
   }
 }
