@@ -25,58 +25,15 @@
       </div>
       <button class="profile__add-button" type="button"></button>
     </section>
-    <section class="cards" aria-label="Интересные места">
-      <article class="card">
-        <img src="./images/karachaevsk.jpg" alt="Карачаевск" class="card__image">
-        <div class="card__content">
-          <h2 class="card__title">Карачаевск</h2>
-          <button class="card__like-button" type="button"></button>
-        </div>
-      </article>
-      <article class="card">
-        <img src="./images/elbrus.jpg" alt="Гора Эльбрус" class="card__image">
-        <div class="card__content">
-          <h2 class="card__title">Гора Эльбрус</h2>
-          <button class="card__like-button" type="button"></button>
-        </div>
-      </article>
-      <article class="card">
-        <img src="./images/dombai.jpg" alt="Домбай" class="card__image">
-        <div class="card__content">
-          <h2 class="card__title">Домбай</h2>
-          <button class="card__like-button" type="button"></button>
-        </div>
-      </article>
-      <article class="card">
-        <img src="./images/elbrus.jpg" alt="Гора Эльбрус" class="card__image">
-        <div class="card__content">
-          <h2 class="card__title">Гора Эльбрус</h2>
-          <button class="card__like-button" type="button"></button>
-        </div>
-      </article>
-      <article class="card">
-        <img src="./images/dombai.jpg" alt="Домбай" class="card__image">
-        <div class="card__content">
-          <h2 class="card__title">Домбай</h2>
-          <button class="card__like-button" type="button"></button>
-        </div>
-      </article>
-      <article class="card">
-        <img src="./images/karachaevsk.jpg" alt="Карачаевск" class="card__image">
-        <div class="card__content">
-          <h2 class="card__title">Карачаево-Черкесская Республика</h2>
-          <button class="card__like-button" type="button"></button>
-        </div>
-      </article>
-    </section>
+    <section class="cards" aria-label="Интересные места"></section>
   </main>
   <footer class="footer">
     <p class="footer__copyright">&copy; 2022 Mesto Russia</p>
   </footer>
-  <div class="popup">
+  <div class="popup popup_type_edit">
     <div class="popup__container">
       <h2 class="popup__title">Редактировать профиль</h2>
-      <button class="popup__close-button" type="button"></button>
+      <button class="popup__close-button popup__close-button_type_edit" type="button"></button>
       <form class="popup__form" name="popup-form">
         <fieldset class="popup__form-item">
           <input type="text" class="popup__form-input popup__form-input_type_name" name="name" placeholder="Ваше имя">
@@ -90,6 +47,44 @@
       </form>
     </div>
   </div>
+  <div class="popup popup_type_add">
+    <div class="popup__container">
+      <h2 class="popup__title">Новое место</h2>
+      <button class="popup__close-button popup__close-button_type_add" type="button"></button>
+      <form class="popup__form popup__form_type_add" name="popup-form">
+        <fieldset class="popup__form-item">
+          <input type="text" class="popup__form-input popup__form-input_type_title" name="title" placeholder="Название">
+        </fieldset>
+        <fieldset class="popup__form-item">
+          <input type="text" class="popup__form-input popup__form-input_type_link" name="link" placeholder="Ссылка на картинку">
+        </fieldset>
+        <fieldset class="popup__form-item">
+          <button class="popup__form-button" type="submit">Создать</button>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+  <div class="popup popup_type_image">
+    <div class="popup__container-image">
+      <button class="popup__close-button popup__close-button_type_image"></button>
+    </div>
+  </div>
+  <template id="template-card">
+    <article class="card">
+      <img src="" alt="" class="card__image">
+      <button class="card__delete-button" type="button"></button>
+      <div class="card__content">
+        <h2 class="card__title"></h2>
+        <button class="card__like-button" type="button"></button>
+      </div>
+    </article>
+  </template>
+  <template id="template-image">
+    <figure class="popup__figure">
+      <img src="" alt="" class="popup__figure-image">
+      <figcaption class="popup__figure-label"></figcaption>
+    </figure>
+  </template>
   <script src="./scripts/index.js"></script>
 </body>
 </html>
