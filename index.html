@@ -34,7 +34,7 @@
     <div class="popup__container">
       <h2 class="popup__title">Редактировать профиль</h2>
       <button class="popup__close-button popup__close-button_type_edit" type="button"></button>
-      <form class="popup__form" name="popup-form">
+      <form class="popup__form popup__form_type_edit" name="popup-form">
         <fieldset class="popup__form-item">
           <input type="text" class="popup__form-input popup__form-input_type_name" name="name" placeholder="Ваше имя">
         </fieldset>
@@ -67,6 +67,10 @@
   <div class="popup popup_type_image">
     <div class="popup__container-image">
       <button class="popup__close-button popup__close-button_type_image"></button>
+      <figure class="popup__figure">
+        <img src="./images/elbrus.jpg" alt="Эльбрус" class="popup__figure-image">
+        <figcaption class="popup__figure-label"></figcaption>
+      </figure>
     </div>
   </div>
   <template id="template-card">
@@ -79,12 +83,7 @@
       </div>
     </article>
   </template>
-  <template id="template-image">
-    <figure class="popup__figure">
-      <img src="./images/elbrus.jpg" alt="Эльбрус" class="popup__figure-image">
-      <figcaption class="popup__figure-label"></figcaption>
-    </figure>
-  </template>
+  <script src="./scripts/constants.js"></script>
   <script src="./scripts/index.js"></script>
 </body>
 </html>
