@@ -14,7 +14,7 @@
   border-radius: 2px;
 }
 
-.popup__form-button:hover {
+.popup__form-button:not(.popup__form-button_disabled):hover {
   opacity: 0.6;
 }
 

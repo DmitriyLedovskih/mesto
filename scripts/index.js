@@ -6,7 +6,7 @@ const profileName = document.querySelector('.profile__name');
 const profileJob = document.querySelector('.profile__job');
 const formElementEdit = document.querySelector('.popup__form_type_edit');
 const nameInput = formElementEdit.querySelector('.popup__form-input_type_name');
-const jobInput = formElementEdit.querySelector('.popup__form-input_type_job');
+const descriptionInput = formElementEdit.querySelector('.popup__form-input_type_description');
 // Переменные для попапа добавления карточек
 const popupTypeAdd = document.querySelector('.popup_type_add');
 const buttonOpenAddCardPopup = document.querySelector('.profile__add-button');
@@ -32,11 +32,31 @@ function likeCard(e) {
 // Функция для открытия попапов
 function openPopup(popup) {
   popup.classList.add('popup_opened');
+  closePopupEsc(popup);
+  closePopupOverlay(popup);
 }
 
 // Функция для закрытия попапов
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
+}
+
+// Функция для закрытие попапа при клики на оверлей
+function closePopupOverlay(popup) {
+  popup.addEventListener('click', (e) => {
+    if (e.target === e.currentTarget) {
+      closePopup(popup);
+    }
+  });
+}
+
+// Функция для закрытие попапа с помощью клавиши Esc
+function closePopupEsc(popup) {
+  document.addEventListener('keydown', (evt) => {
+    if (evt.key === 'Escape') {
+      closePopup(popup);
+    }
+  });
 }
 
 // Функция для удаления карточек
@@ -104,20 +124,19 @@ function openImagePopup(data) {
 // Функция для получения данных с профиля и добавления их в инпуты
 function fillInFormInputs() {
   nameInput.value = profileName.textContent;
-  jobInput.value = profileJob.textContent;
+  descriptionInput.value = profileJob.textContent;
   openPopup(popupTypeEdit);
 
 }
 // Функция для редактирования профиля
-function profileEdit(evt) {
-  evt.preventDefault();
+function profileEdit() {
+  enabledValidation();
   profileName.textContent = nameInput.value;
-  profileJob.textContent = jobInput.value;
+  profileJob.textContent = descriptionInput.value;
   closePopup(popupTypeEdit);
 }
 
 // Обработчики события когда форма отправлена
-
 formElementEdit.addEventListener('submit', profileEdit);
 formElementAdd.addEventListener('submit', addCard);
 
