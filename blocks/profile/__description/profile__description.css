@@ -1,4 +1,4 @@
-.profile__job {
+.profile__description {
   font-weight: 400;
   font-size: 18px;
   line-height: 22px;
@@ -11,7 +11,7 @@
 }
 
 @media screen and (max-width: 720px) {
-  .profile__job {
+  .profile__description {
     font-size: 14px;
     line-height: 17px;
     max-width: 260px;

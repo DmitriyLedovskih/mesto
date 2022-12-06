@@ -20,7 +20,7 @@
             <h1 class="profile__name">Жак-Ив Кусто</h1>
             <button class="profile__edit-button" type="button"></button>
           </div>
-          <p class="profile__job">Исследователь океана</p>
+          <p class="profile__description">Исследователь океана</p>
         </div>
       </div>
       <button class="profile__add-button" type="button"></button>
@@ -36,14 +36,14 @@
       <button class="popup__close-button popup__close-button_type_edit" type="button"></button>
       <form class="popup__form popup__form_type_edit" name="popup-form" novalidate>
         <fieldset class="popup__form-item">
-          <input type="text" class="popup__form-input popup__form-input_type_name" name="name" placeholder="Ваше имя" required id="input-name" minlength="2" maxlength="40">
-          <span class="popup__form-error input-name-error"></span>
-        </fieldset>
-        <fieldset class="popup__form-item">
-          <input type="text" class="popup__form-input popup__form-input_type_description" name="description" placeholder="О себе" required id="input-description" minlength="2" maxlength="200">
-          <span class="popup__form-error input-description-error"></span>
-        </fieldset>
-        <fieldset class="popup__form-item">
+          <label class="popup__form-field">
+            <input type="text" class="popup__form-input popup__form-input_type_name" name="name" placeholder="Ваше имя" required id="input-name" minlength="2" maxlength="40">
+            <span class="popup__form-error input-name-error"></span>
+          </label>
+          <label class="popup__form-field">
+            <input type="text" class="popup__form-input popup__form-input_type_description" name="description" placeholder="О себе" required id="input-description" minlength="2" maxlength="200">
+            <span class="popup__form-error input-description-error"></span>
+          </label>
           <button class="popup__form-button" type="submit">Сохранить</button>
         </fieldset>
       </form>
@@ -55,14 +55,14 @@
       <button class="popup__close-button popup__close-button_type_add" type="button"></button>
       <form class="popup__form popup__form_type_add" name="popup-form" novalidate>
         <fieldset class="popup__form-item">
-          <input type="text" class="popup__form-input popup__form-input_type_title" name="title" placeholder="Название" required minlength="2" maxlength="30" id="input-title">
-          <span class="popup__form-error input-title-error"></span>
-        </fieldset>
-        <fieldset class="popup__form-item">
-          <input type="url" class="popup__form-input popup__form-input_type_link" name="link" placeholder="Ссылка на картинку" required id="input-link">
-          <span class="popup__form-error input-link-error"></span>
-        </fieldset>
-        <fieldset class="popup__form-item">
+          <label class="popup__form-field">
+            <input type="text" class="popup__form-input popup__form-input_type_title" name="title" placeholder="Название" required minlength="2" maxlength="30" id="input-title">
+            <span class="popup__form-error input-title-error"></span>
+          </label>
+          <label class="popup__form-field">
+            <input type="url" class="popup__form-input popup__form-input_type_link" name="link" placeholder="Ссылка на картинку" required id="input-link">
+            <span class="popup__form-error input-link-error"></span>
+          </label>
           <button class="popup__form-button" type="submit">Создать</button>
         </fieldset>
       </form>
