@@ -44,10 +44,9 @@ function closePopup(popup) {
 }
 
 // Функция для закрытие попапа при клики на оверлей
-function closeOverlay(e) {
-  if (e.target === e.currentTarget) {
-    const openedPopup = document.querySelector('.popup_opened');
-    closePopup(openedPopup);
+function closeOverlay(evt) {
+  if (evt.target === evt.currentTarget) {
+    closePopup(evt.currentTarget);
   }
 }
 
