@@ -6,4 +6,6 @@
   display: block;
   margin-top: 5px;
   min-height: 30px;
+  opacity: 0;
+  transition: .3s;
 }
