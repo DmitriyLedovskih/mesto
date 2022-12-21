@@ -25,3 +25,6 @@ const initialCards = [
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
   }
 ];
+
+// Экспорт массива с данными карточек
+export { initialCards }
