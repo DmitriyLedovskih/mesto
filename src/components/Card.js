@@ -1,11 +1,9 @@
-// Импорт функции и перемен
-import { openPopup, popupTypeImage, popupFigureImage, popupFigureLabel } from './index.js';
-
 // Класс для создания карточек
-class Card {
-  constructor(data, template) {
-    this._name = data.name;
+export default class Card {
+  constructor({ data, handleCardClick }, template) {
+    this._name = data.title;
     this._link = data.link;
+    this._handleCardClick = handleCardClick;
     this._template = template;
   }
 
@@ -27,14 +25,6 @@ class Card {
     return this._element;
   }
 
-  // Метод для открытия попапа с изхображением
-  _openImagePopup() {
-    popupFigureImage.src = this._link;
-    popupFigureImage.alt = this._name;
-    popupFigureLabel.textContent = this._name;
-    openPopup(popupTypeImage);
-  }
-
   // Метода для лайка карточек
   _handleLikeClick() {
     this._element.querySelector('.card__like-button').classList.toggle('card__like-button_active');
@@ -48,9 +38,7 @@ class Card {
   // Метод для добавленеия обработчиков события
   _setEventListener() {
     this._element.querySelector('.card__like-button').addEventListener('click', () => this._handleLikeClick());
-    this._element.querySelector('.card__image').addEventListener('click', () => this._openImagePopup());
+    this._element.querySelector('.card__image').addEventListener('click', () => this._handleCardClick());
     this._element.querySelector('.card__delete-button').addEventListener('click', () => this._removeCard());
   }
 }
-
-export { Card }
