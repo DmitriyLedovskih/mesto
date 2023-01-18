@@ -9,8 +9,7 @@ export default class Card {
 
   // Метод для получения Template
   _getTemplate() {
-    const templateElement = document.querySelector(this._template).content.querySelector('.card').cloneNode(true);
-    return templateElement;
+    return document.querySelector(this._template).content.querySelector('.card').cloneNode(true);
   }
 
   // Метод для создания карточек

@@ -2,12 +2,12 @@
 export default class Popup {
   constructor(popup) {
     this._popup = popup;
+    this._handleEscClose = this._handleEscClose.bind(this);
   }
 
   // Метод для открытия попапа
   open() {
     this._popup.classList.add('popup_opened');
-    this._handleEscClose = this._handleEscClose.bind(this);
     document.addEventListener('keydown', this._handleEscClose);
   }
 
@@ -25,12 +25,11 @@ export default class Popup {
   }
 
   // Метод для добавления обработчиков события
-  setEventListeners(popupClose) {
+  setEventListeners() {
     this._popup.addEventListener('click', (evt) => {
-      if (evt.target === evt.currentTarget) {
+      if (evt.target.classList.contains('popup__close-button') || evt.target === evt.currentTarget) {
         this.close();
       }
     });
-    popupClose.addEventListener('click', () => this.close());
   }
 }

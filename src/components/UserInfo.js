@@ -1,21 +1,21 @@
-import { descriptionInput, nameInput } from "../utils/constants.js";
-
 // Класс для измения профиля
 export default class UserInfo {
-  constructor({ name, descr }) {
-    this._selectorName = name;
-    this._selectorDescr = descr;
+  constructor(selectorName, selectorDescr) {
+    this._selectorName = document.querySelector(selectorName);
+    this._selectorDescr = document.querySelector(selectorDescr);
   }
 
   // Метод для получения данных из профиля
   getUserInfo() {
-    nameInput.value =  this._selectorName.textContent;
-    descriptionInput.value = this._selectorDescr.textContent;
+    return {
+      name: this._selectorName.textContent,
+      description: this._selectorDescr.textContent
+    };
   }
 
   // Метод для редактирования профиля
-  setUserInfo() {
-    this._selectorName.textContent = nameInput.value;
-    this._selectorDescr.textContent = descriptionInput.value;
+  setUserInfo(data) {
+    this._selectorName.textContent = data.name;
+    this._selectorDescr.textContent = data.description;
   }
 }

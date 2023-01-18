@@ -1,5 +1,5 @@
 // Класс для валидации форм
-class FormValidator {
+export default class FormValidator {
   constructor(settings, form) {
     this._formSelector = settings.formSelector;
     this._inputSelector = settings.inputSelector;
@@ -44,7 +44,7 @@ class FormValidator {
   }
 
   // Метод для отключения и включения кнопки
-  stateToggleButton() {
+  _stateToggleButton() {
     const button = this._form.querySelector(this._submitButtonSelector);
     if (this._hasInvalidInput()) {
       button.classList.add(this._inactiveButtonClass);
@@ -58,20 +58,21 @@ class FormValidator {
   // Метод для добавления обработчика события
   _setEventListener() {
     const inputList = Array.from(this._form.querySelectorAll(this._inputSelector));
-    this.stateToggleButton();
+    this._stateToggleButton();
     inputList.forEach(input => {
       input.addEventListener('input', () => {
         this._inputValidate(input);
-        this.stateToggleButton();
+        this._stateToggleButton();
       });
     });
   }
 
+  // Метод для сброса валидации
   resetValidation() {
     const inputList = Array.from(this._form.querySelectorAll(this._inputSelector));
     inputList.forEach(input => {
       this._hiddenError(input);
-      this.stateToggleButton();
+      this._stateToggleButton();
     });
   }
 
@@ -80,5 +81,3 @@ class FormValidator {
     this._setEventListener();
   }
 }
-
-export{ FormValidator }
