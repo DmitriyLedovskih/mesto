@@ -21,7 +21,6 @@ formEditValidation.enabledValidation();
 const formAdd = new PopupWithForm(popupTypeAdd, formElementAdd, {
   handleFormSubmit: (element) => {
     createCard(element);
-    formAddValidation.resetValidation();
   }
 });
 
@@ -41,7 +40,6 @@ const userInfo = new UserInfo(profileName, profileDescription);
 const formEdit = new PopupWithForm(popupTypeEdit, formElementEdit, {
   handleFormSubmit: (element) => {
     userInfo.setUserInfo(element);
-    formAddValidation.resetValidation();
   }
 });
 
@@ -68,6 +66,7 @@ function createCard(item) {
 // Открытие попапа для добавления карточек
 buttonOpenAddCardPopup.addEventListener('click', () => {
   formAdd.open();
+  formAddValidation.resetValidation();
 });
 
 // Открытие попапа для редактирования профиля и получения данных из профиля
@@ -75,6 +74,7 @@ buttonOpenEditProfilePopup.addEventListener('click', () => {
   formEdit.open();
   nameInput.value = userInfo.getUserInfo().name;
   descriptionInput.value = userInfo.getUserInfo().description;
+  formAddValidation.resetValidation();
 });
 
 // Рендеренг карточек
