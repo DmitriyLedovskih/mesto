@@ -11,7 +11,7 @@ export default class PopupWithImage extends Popup {
   // Метод для получения данных карточки
   open(data) {
     super.open();
-    this._name = data.title;
+    this._name = data.name;
     this._link = data.link;
 
     this._popupFigureImage.src = this._link;
