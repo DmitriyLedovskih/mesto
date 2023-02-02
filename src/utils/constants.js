@@ -14,7 +14,7 @@ export const descriptionInput = formElementEdit.querySelector('.popup__form-inpu
 export const formButtonEdit = document.querySelector('.popup__form-button_type_edit');
 // Переменные для куда нужно вывести карточки
 export const cardsContainer = '.cards';
-//
+// Перемые для аватарки профиля и попапа для смены аватарки
 export const buttonOpenAvatarPopup = document.querySelector('.profile__avatar-button');
 export const popupTypeAvatar = document.querySelector('.popup_type_avatar');
 export const formElementAvatar = document.querySelector('.popup__form_type_avatar');

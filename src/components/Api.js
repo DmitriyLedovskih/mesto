@@ -1,8 +1,10 @@
+// Класс Api для подключения к серверу
 export default class Api {
   constructor(options) {
     this._options = options;
   }
 
+  // Метод для получения карточек
   getInitialCards() {
     return fetch(`${this._options.baseUrl}/cards`, {
       headers: this._options.headers
@@ -10,6 +12,7 @@ export default class Api {
     .then((res) => res.ok ? res.json() : Promise.reject(`Ошибка: ${res.status}`))
   }
 
+  // Метод для получения данных пользователя
   getProfileInfo() {
     return fetch(`${this._options.baseUrl}/users/me`, {
       headers: this._options.headers
@@ -17,6 +20,7 @@ export default class Api {
     .then((res) => res.ok ? res.json() : Promise.reject(`Ошибка: ${res.status}`))
   }
 
+  // Метод для изменея данных пользователя
   profileEdit(inputData) {
     return fetch(`${this._options.baseUrl}/users/me`, {
       method: 'PATCH',
@@ -29,6 +33,7 @@ export default class Api {
     .then((res) => res.ok ? res.json() : Promise.reject(`Ошибка: ${res.status}`))
   }
 
+  // Метод для добавления карточек
   addCard(cardData) {
     return fetch(`${this._options.baseUrl}/cards`, {
       method: 'POST',
@@ -41,6 +46,7 @@ export default class Api {
     .then((res) => res.ok ? res.json() : Promise.reject(`Ошибка: ${res.status}`))
   }
 
+  // Метод для удаление карточек
   deleteCard(id) {
     return fetch(`${this._options.baseUrl}/cards/${id}`, {
       method: 'DELETE',
@@ -49,6 +55,7 @@ export default class Api {
     .then((res) => res.ok ? res.json() : Promise.reject(`Ошибка: ${res.status}`))
   }
 
+    // Метод для измения аватара
   editAvatar(avatarData) {
     return fetch(`${this._options.baseUrl}/users/me/avatar`, {
       method: 'PATCH',
@@ -60,6 +67,7 @@ export default class Api {
     .then((res) => res.ok ? res.json() : Promise.reject(`Ошибка: ${res.status}`))
   }
 
+  // Метод для добавления лайков
   handleLikeCard(id) {
     return fetch(`${this._options.baseUrl}/cards/${id}/likes`, {
       method: 'PUT',
@@ -68,6 +76,7 @@ export default class Api {
     .then((res) => res.ok ? res.json() : Promise.reject(`Ошибка: ${res.status}`))
   }
 
+  // Метод для удаления лайков
   deleteLikeCard(id) {
     return fetch(`${this._options.baseUrl}/cards/${id}/likes`, {
       method: 'DELETE',
@@ -75,5 +84,4 @@ export default class Api {
     })
     .then((res) => res.ok ? res.json() : Promise.reject(`Ошибка: ${res.status}`))
   }
-
 }

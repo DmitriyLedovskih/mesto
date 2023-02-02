@@ -22,6 +22,7 @@ formEditValidation.enabledValidation();
 const formAvatarValidation = new FormValidator(objectClass, formElementAvatar);
 formAvatarValidation.enabledValidation();
 
+// Класс api
 const api = new Api({
   baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-59',
   headers: {
@@ -30,23 +31,25 @@ const api = new Api({
   }
 });
 
+// Метод для получения карточек
 api.getInitialCards()
   .then(result => {
     cardsList.renderItems(result);
   })
   .catch(err => {
     console.log(err);
-  })
+  });
 
-  const owner = api.getProfileInfo()
-    .then(result => {
-      userInfo.setUserInfo(result);
-      profileAvatar.src = result.avatar;
-      return result;
-    })
-    .catch(err => {
-      console.log(err);
-    })
+// Метод для получения данных пользователя
+const owner = api.getProfileInfo()
+  .then(result => {
+    userInfo.setUserInfo(result);
+    profileAvatar.src = result.avatar;
+    return result;
+  })
+  .catch(err => {
+    console.log(err);
+  });
 
 // Добавление карточек
 const formAdd = new PopupWithForm(popupTypeAdd, formElementAdd, {
@@ -64,12 +67,13 @@ const formAdd = new PopupWithForm(popupTypeAdd, formElementAdd, {
         formButtonAdd.textContent = 'Создать';
         formAdd.close();
       }, 500);
-    })
+    });
   }
 });
 
 formAdd.setEventListeners();
 
+// Класс для отрисовки карточек
 const cardsList = new Section({
   renderer: (item) => {
     createCard(item);
@@ -107,6 +111,7 @@ const imagePopup = new PopupWithImage(popupTypeImage);
 
 imagePopup.setEventListeners();
 
+// Класс для попапа удлаления карточек
 const deletePopup = new PopupWithSubmit(popupTypeDelete, formElementDelete, {
   handleSubmit: (data, card) => {
     formButtonDelete.textContent = 'Удаление...';
@@ -167,7 +172,6 @@ function createCard(item) {
     '#template-card',
     );
   const cardElement = card.createCard();
-  // card.isOwner();
   card.likeCounter(item);
   cardsList.addItem(cardElement);
 }
@@ -186,6 +190,7 @@ buttonOpenEditProfilePopup.addEventListener('click', () => {
   formAddValidation.resetValidation();
 });
 
+// Редоктирования аватара
 const popupAvatar = new PopupWithForm(popupTypeAvatar, formElementAvatar, {
   handleFormSubmit: (element) => {
     formButtonAvatar.textContent = 'Сохранение...';

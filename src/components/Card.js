@@ -26,19 +26,22 @@ export default class Card {
     return this._element;
   }
 
+  // Метод для вывода количества лайков
   likeCounter(data) {
     this._element.querySelector('.card__like-counter').textContent = data.likes.length;
   }
 
-  // Метода для лайка карточек
+  // Метода для добавление активного класса для лайка
   likeAdd() {
     this._element.querySelector('.card__like-button').classList.add('card__like-button_active');
   }
 
+  // Метода для убирания активного класса для лайка
   likeRemove() {
     this._element.querySelector('.card__like-button').classList.remove('card__like-button_active');
   }
 
+  // Метод для проверки владельца карточки
   _isOwner() {
     this._owner
       .then(res =>{
@@ -48,6 +51,7 @@ export default class Card {
     })
   }
 
+  // Метод для проверки лайкнутых карточек
   _isLiked() {
      this._owner
       .then(res =>{
