@@ -19,6 +19,12 @@ export default class PopupWithForm extends Popup {
     return dataObject;
   }
 
+  setInputValues(data) {
+    this._inputList.forEach(input => {
+      input.value = data[input.name];
+    });
+  }
+
   // Метод для добавления обработчиков события
   setEventListeners() {
     super.setEventListeners();

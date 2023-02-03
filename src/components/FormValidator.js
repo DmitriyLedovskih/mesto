@@ -8,6 +8,8 @@ export default class FormValidator {
     this._inputErrorClass = settings.inputErrorClass;
     this._errorClass = settings.errorClass;
     this._form = form;
+    this._inputList = Array.from(this._form.querySelectorAll(this._inputSelector));
+    this._formButton = this._form.querySelector(this._submitButtonSelector);
   }
 
   // Метод для показа подсказки
@@ -37,29 +39,26 @@ export default class FormValidator {
 
   // Метод для проверки какие поля не валидные
   _hasInvalidInput() {
-    const inputList = Array.from(this._form.querySelectorAll(this._inputSelector));
-    return inputList.some(element => {
+    return this._inputList.some(element => {
       return !element.validity.valid;
     });
   }
 
   // Метод для отключения и включения кнопки
   _stateToggleButton() {
-    const button = this._form.querySelector(this._submitButtonSelector);
     if (this._hasInvalidInput()) {
-      button.classList.add(this._inactiveButtonClass);
-      button.disabled = true;
+      this._formButton.classList.add(this._inactiveButtonClass);
+      this._formButton.disabled = true;
     } else {
-      button.classList.remove(this._inactiveButtonClass);
-      button.disabled = false;
+      this._formButton.classList.remove(this._inactiveButtonClass);
+      this._formButton.disabled = false;
     }
   }
 
   // Метод для добавления обработчика события
   _setEventListener() {
-    const inputList = Array.from(this._form.querySelectorAll(this._inputSelector));
     this._stateToggleButton();
-    inputList.forEach(input => {
+    this._inputList.forEach(input => {
       input.addEventListener('input', () => {
         this._inputValidate(input);
         this._stateToggleButton();
@@ -69,8 +68,7 @@ export default class FormValidator {
 
   // Метод для сброса валидации
   resetValidation() {
-    const inputList = Array.from(this._form.querySelectorAll(this._inputSelector));
-    inputList.forEach(input => {
+    this._inputList.forEach(input => {
       this._hiddenError(input);
       this._stateToggleButton();
     });

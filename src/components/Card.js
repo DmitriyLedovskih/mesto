@@ -1,12 +1,18 @@
 // Класс для создания карточек
 export default class Card {
-  constructor({ data, handleCardClick, handleDeleteCard, handleLikeCard }, owner, template) {
+  constructor({ data, handleCardClick, handleDeleteCard, handleLikeCard }, userData, template) {
     this._data = data;
     this._handleCardClick = handleCardClick;
     this._handleDeleteCard = handleDeleteCard;
     this._handleLikeCard = handleLikeCard;
-    this._owner = owner;
+    this.userData = userData;
     this._template = template;
+    this._element = this._getTemplate();
+    this._cardImage = this._element.querySelector('.card__image');
+    this._likeCounter = this._element.querySelector('.card__like-counter');
+    this._likeButton = this._element.querySelector('.card__like-button');
+    this._deleteButton = this._element.querySelector('.card__delete-button');
+    this._cardTitle = this._element.querySelector('.card__title');
   }
 
   // Метод для получения Template
@@ -16,44 +22,43 @@ export default class Card {
 
   // Метод для создания карточек
   createCard() {
-    this._element = this._getTemplate();
-    this._element.querySelector('.card__image').src = this._data.link;
-    this._element.querySelector('.card__image').alt = this._data.name;
-    this._element.querySelector('.card__title').textContent = this._data.name;
-    this._setEventListener();
+    this._cardImage.src = this._data.link;
+    this._cardImage.alt = this._data.name;
+    this._cardTitle.textContent = this._data.name;
     this._isLiked();
     this._isOwner();
+    this._setEventListener();
     return this._element;
   }
 
   // Метод для вывода количества лайков
   likeCounter(data) {
-    this._element.querySelector('.card__like-counter').textContent = data.likes.length;
+    this._likeCounter.textContent = data.likes.length;
   }
 
   // Метода для добавление активного класса для лайка
   likeAdd() {
-    this._element.querySelector('.card__like-button').classList.add('card__like-button_active');
+    this._likeButton.classList.add('card__like-button_active');
   }
 
   // Метода для убирания активного класса для лайка
   likeRemove() {
-    this._element.querySelector('.card__like-button').classList.remove('card__like-button_active');
+    this._likeButton.classList.remove('card__like-button_active');
   }
 
   // Метод для проверки владельца карточки
   _isOwner() {
-    this._owner
+    this.userData
       .then(res =>{
       if (this._data.owner._id !== res._id) {
-        this._element.querySelector('.card__delete-button').remove();
+        this._deleteButton.remove();
       }
     })
   }
 
   // Метод для проверки лайкнутых карточек
   _isLiked() {
-     this._owner
+     this.userData
       .then(res =>{
         this._data.likes.forEach(element => {
           if (element._id === res._id) {
@@ -67,10 +72,10 @@ export default class Card {
 
   // Метод для добавленеия обработчиков события
   _setEventListener() {
-    this._element.querySelector('.card__like-button').addEventListener('click', (evt) => {
+    this._likeButton.addEventListener('click', (evt) => {
       this._handleLikeCard(evt);
     });
-    this._element.querySelector('.card__image').addEventListener('click', () => this._handleCardClick());
-    this._element.querySelector('.card__delete-button').addEventListener('click', () => this._handleDeleteCard());
+    this._cardImage.addEventListener('click', () => this._handleCardClick());
+    this._deleteButton.addEventListener('click', () => this._handleDeleteCard());
   }
 }

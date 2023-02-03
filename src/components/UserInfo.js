@@ -10,7 +10,8 @@ export default class UserInfo {
   getUserInfo() {
     return {
       name: this._selectorName.textContent,
-      about: this._selectorDescr.textContent
+      about: this._selectorDescr.textContent,
+      avatar: this._selectorAvatar.src
     };
   }
 
@@ -18,6 +19,6 @@ export default class UserInfo {
   setUserInfo(data) {
     this._selectorName.textContent = data.name;
     this._selectorDescr.textContent = data.about;
-    // this._selectorAvatar.src = data.avatar;
+    this._selectorAvatar.src = data.avatar;
   }
 }

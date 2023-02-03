@@ -4,12 +4,16 @@ export default class Api {
     this._options = options;
   }
 
+  _checkResponse(res) {
+    return res.ok ? res.json() : Promise.reject(`Ошибка: ${res.status}`)
+  }
+
   // Метод для получения карточек
   getInitialCards() {
     return fetch(`${this._options.baseUrl}/cards`, {
       headers: this._options.headers
     })
-    .then((res) => res.ok ? res.json() : Promise.reject(`Ошибка: ${res.status}`))
+    .then(this._checkResponse);
   }
 
   // Метод для получения данных пользователя
@@ -17,7 +21,7 @@ export default class Api {
     return fetch(`${this._options.baseUrl}/users/me`, {
       headers: this._options.headers
     })
-    .then((res) => res.ok ? res.json() : Promise.reject(`Ошибка: ${res.status}`))
+    .then(this._checkResponse);
   }
 
   // Метод для изменея данных пользователя
@@ -30,7 +34,7 @@ export default class Api {
         about: inputData.about
       })
     })
-    .then((res) => res.ok ? res.json() : Promise.reject(`Ошибка: ${res.status}`))
+    .then(this._checkResponse);
   }
 
   // Метод для добавления карточек
@@ -43,7 +47,7 @@ export default class Api {
         link: cardData.link
       })
     })
-    .then((res) => res.ok ? res.json() : Promise.reject(`Ошибка: ${res.status}`))
+    .then(this._checkResponse);
   }
 
   // Метод для удаление карточек
@@ -52,7 +56,7 @@ export default class Api {
       method: 'DELETE',
       headers: this._options.headers,
     })
-    .then((res) => res.ok ? res.json() : Promise.reject(`Ошибка: ${res.status}`))
+    .then(this._checkResponse);
   }
 
     // Метод для измения аватара
@@ -64,7 +68,7 @@ export default class Api {
         avatar: avatarData.avatar
       })
     })
-    .then((res) => res.ok ? res.json() : Promise.reject(`Ошибка: ${res.status}`))
+    .then(this._checkResponse);
   }
 
   // Метод для добавления лайков
@@ -73,7 +77,7 @@ export default class Api {
       method: 'PUT',
       headers: this._options.headers,
     })
-    .then((res) => res.ok ? res.json() : Promise.reject(`Ошибка: ${res.status}`))
+    .then(this._checkResponse);
   }
 
   // Метод для удаления лайков
@@ -82,6 +86,6 @@ export default class Api {
       method: 'DELETE',
       headers: this._options.headers,
     })
-    .then((res) => res.ok ? res.json() : Promise.reject(`Ошибка: ${res.status}`))
+    .then(this._checkResponse);
   }
 }
