@@ -19,3 +19,17 @@
 2. Методология БЭМ
 3. Grid и Flex технологии
 4. ОПП
+
+## Как посмотреть проект:
+```
+$  git clone https://github.com/DmitriyLedovskih/mesto.git
+```
+```
+$  cd mesto
+```
+```
+$  npm i webpack
+```
+```
+$  npm run dev
+```
