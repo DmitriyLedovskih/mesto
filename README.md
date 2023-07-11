@@ -28,7 +28,7 @@ $  git clone https://github.com/DmitriyLedovskih/mesto.git
 $  cd mesto
 ```
 ```
-$  npm i webpack
+$  npm i
 ```
 ```
 $  npm run dev
